@@ -1,0 +1,93 @@
+
+
+<h2 style="padding: 0 20px 0 20px; text-align: center;"> Update Product</h2>
+<div *ngIf="productForm">
+  <form [formGroup]=" productForm" (ngSubmit)="onProductFormSubmit()" style="display: flex;justify-content:center">
+    <div style="flex-direction: column; padding: 0 20px 0 20px;max-width: 600px;width: 75%">
+      <div class="form-row">
+        <label for="name">Name</label>
+        <input class="form-control" [ngClass]="{'input-error': this.productForm?.get('name').touched && (productForm?.get('name')?.errors?.required ||
+        productForm?.get('name')?.errors?.minlength)}" formControlName="name" placeholder="Name">
+        <div class="error-message"
+          *ngIf="this.productForm?.get('name').touched && productForm?.get('name')?.errors?.required">
+          Name is required
+        </div>
+        <div class="error-message"
+          *ngIf="this.productForm?.get('name').touched && productForm?.get('name')?.errors?.minlength">
+          Name isn't long enough, minimum of 3 characters needed
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="category">Product Category</label>
+        <input class="form-control"
+          [ngClass]="{'input-error': this.productForm?.get('category').touched && productForm?.get('category')?.errors?.required}"
+          formControlName="category" placeholder="Product Category">
+        <div class="error-message"
+          *ngIf="this.productForm?.get('category').touched && productForm?.get('category')?.errors?.required">
+          Category is required
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="manufacturer">Manufacturer</label>
+        <input class="form-control"
+          [ngClass]="{'input-error': this.productForm?.get('manufacturer').touched && productForm?.get('manufacturer')?.errors?.required}"
+          formControlName="manufacturer" placeholder="Manufacturer">
+        <div class="error-message"
+          *ngIf="this.productForm?.get('manufacturer').touched && productForm?.get('manufacturer')?.errors?.required">
+          Manufacturer is required
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="availableItems">Available Items</label>
+        <input class="form-control" [ngClass]="{'input-error': this.productForm?.get('availableItems').touched && (productForm?.get('availableItems')?.errors?.required
+          || productForm?.get('availableItems')?.errors?.min)}" formControlName="availableItems"
+          placeholder="Available Items">
+        <div class="error-message"
+          *ngIf="this.productForm?.get('availableItems').touched && productForm?.get('availableItems')?.errors?.required">
+          Available Items are required
+        </div>
+        <div class="error-message"
+          *ngIf="this.productForm?.get('availableItems').touched && productForm?.get('availableItems')?.errors?.min">
+          Available Items should be greater than Zero
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="price">Price</label>
+        <input class="form-control" [ngClass]="{'input-error': this.productForm?.get('price').touched && (productForm?.get('price')?.errors?.required
+          || productForm?.get('price')?.errors?.min)}" formControlName="price" placeholder="Price">
+        <div class="error-message"
+          *ngIf="this.productForm?.get('price').touched && productForm?.get('price')?.errors?.required">
+          Price is required
+        </div>
+        <div class="error-message"
+          *ngIf="this.productForm?.get('price').touched && productForm?.get('price')?.errors?.min">
+          Price should be greater than
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="imageUrl">Image Url</label>
+        <input class="form-control"
+          [ngClass]="{'input-error': this.productForm?.get('imageUrl').touched && productForm?.get('imageUrl')?.errors?.required}"
+          formControlName="imageUrl" placeholder="Image Url">
+        <div class="error-message"
+          *ngIf="this.productForm?.get('imageUrl').touched && productForm?.get('imageUrl')?.errors?.required">
+          Image URL is required
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="description">Product Description</label>
+        <textarea class="form-control"
+          [ngClass]="{'input-error': this.productForm?.get('description').touched && productForm?.get('description')?.errors?.required}"
+          formControlName="description" placeholder="Product Description"></textarea>
+        <div class="error-message"
+          *ngIf="this.productForm?.get('description').touched && productForm?.get('description')?.errors?.required">
+          Product Description is required
+        </div>
+      </div>
+      <div fxFlex="100" class="text-center mt-2">
+        <button class="btn btn-primary" type="button" type="submit">Save</button>
+      </div>
+    </div>
+  </form>
+
+</div>

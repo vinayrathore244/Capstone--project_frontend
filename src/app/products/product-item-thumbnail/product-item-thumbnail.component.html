@@ -1,0 +1,16 @@
+
+
+  <div class="card" style="width: 200px;">
+    <img class="card-img-top" style="width: 200px; height:200px"[src]="product.imageUrl" alt="Card image cap" [routerLink]="['/products/detail', product.productId]">
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          <a [routerLink]="['/products/detail', product.productId]"  [title]="product.name">
+            {{product.name | truncateText:43}}
+          </a>
+          <p class="card-text">{{product.price | currency:'INR'}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+

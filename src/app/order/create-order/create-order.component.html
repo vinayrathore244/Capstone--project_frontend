@@ -1,0 +1,49 @@
+<div fxLayout="column" fxLayoutAlign="center center" class="w-100" *ngIf="isUserLoggedIn">
+  <div id="orderStepper" class="bs-stepper">
+    <div class="bs-stepper-header" role="tablist">
+      <div class="step" data-target="#items">
+        <button type="button" class="step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger" >
+          <span class="bs-stepper-circle">1</span>
+          <span class="bs-stepper-label">Items</span>
+        </button>
+      </div>
+      <div class="line"></div>
+      <div class="step" data-target="#address">
+        <button type="button" class="step-trigger" role="tab" aria-controls="address" id="information-part-trigger">
+          <span class="bs-stepper-circle">2</span>
+          <span class="bs-stepper-label">Choose Address</span>
+        </button>
+      </div>
+      <div class="line"></div>
+      <div class="step" data-target="#order">
+        <button type="button" class="step-trigger" role="tab" aria-controls="order" id="information-part-trigger">
+          <span class="bs-stepper-circle">3</span>
+          <span class="bs-stepper-label">Review Order</span>
+        </button>
+      </div>
+      <div class="line"></div>
+      <div class="step" data-target="#confirm">
+        <button type="button" class="step-trigger" role="tab" aria-controls="confirm" id="information-part-trigger">
+          <span class="bs-stepper-circle">4</span>
+          <span class="bs-stepper-label">Confirm Order</span>
+        </button>
+      </div>
+    </div>
+    <div class="bs-stepper-content">
+      <div id="items" class="content" role="tabpanel" aria-labelledby="items">
+        <app-list-cart (onComplete)="goToChooseAddress()"></app-list-cart>    
+      </div>
+      <div id="address" class="content" role="tabpanel" aria-labelledby="address">
+        <app-add-address (reloadAddress)="updateAddress($event)"></app-add-address>    
+      </div>
+      <div id="order" class="content" role="tabpanel" aria-labelledby="order">
+        <app-confirm-order *ngIf="order" [order]="order" (onComplete)="onMakePayment()" (onReload)="onReloadOrder($event)">
+        </app-confirm-order>    
+      </div>
+      <div id="confirm" class="content" role="tabpanel" aria-labelledby="confirm">
+        <app-make-payment 
+          ></app-make-payment>    
+      </div>
+    </div>
+    </div>
+</div>

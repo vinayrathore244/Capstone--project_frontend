@@ -1,0 +1,18 @@
+<div class="container" *ngIf="productLoaded">
+  <div class="row">
+    <div class="col-lg-5 col-md-5">
+      <img [src]="product.imageUrl" style="width: 300px; height: 400px;">
+    </div>
+    <div class="col-lg-7 col-md-7">
+      <h2>{{product?.name}}</h2>
+      <p><span class="text-muted fw-500">Category: </span><span>{{ product.category}}</span></p>
+      <p class="p-10 text-muted lh">{{product?.description}}</p>
+      <h2 class="new-price">{{product.price | currency:'INR'}}</h2>
+      <app-add-to-cart-container *ngIf="!hideCart" [product]="product"></app-add-to-cart-container>
+    </div>
+  </div>
+  <div class="row">
+
+  </div>
+</div>
+

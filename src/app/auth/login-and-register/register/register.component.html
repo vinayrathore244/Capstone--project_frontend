@@ -1,0 +1,101 @@
+
+<div class="card">
+<div class="card-body">    
+         
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <div class="form-row">
+            <label for="name">First Name</label>
+            <input  class="form-control" [ngClass]="{'input-error': registerForm.get('firstName').touched && (registerForm?.get('firstName')?.errors?.required
+            || registerForm?.get('firstName')?.errors?.minlength)}"
+            formControlName="firstName" placeholder="First Name" >
+            <div class="error-message" *ngIf="registerForm.get('firstName').touched && registerForm?.get('firstName')?.errors?.required">
+                First Name is required
+            </div>
+            <div class="error-message" *ngIf="registerForm.get('firstName').touched && registerForm?.get('firstName')?.errors?.minlength">
+                First Name isn't long enough, minimum of 3 characters
+            </div>
+        </div>
+        <div class="form-row">
+            <label for="name">Last Name</label>
+            <input  class="form-control" [ngClass]="{'input-error': registerForm.get('lastName').touched && (registerForm?.get('lastName')?.errors?.required
+            || registerForm?.get('firstName')?.errors?.minlength)}"
+            formControlName="lastName" placeholder="Last Name" >
+            <div class="error-message" *ngIf="registerForm.get('lastName').touched && registerForm?.get('lastName')?.errors?.required">
+                Last Name is required
+            </div>
+            <div class="error-message" *ngIf="registerForm.get('lastName').touched && registerForm?.get('lastName')?.errors?.minlength">
+                Last Name isn't long enough, minimum of 3 characters
+            </div>
+        </div>
+        <div class="form-row">
+            <label for="name">Email</label>
+            <input  class="form-control" [ngClass]="{'input-error': registerForm.get('email').touched && (registerForm?.get('email')?.errors?.required
+            || registerForm?.get('email')?.errors?.invalidEmail)}"
+            formControlName="email" placeholder="Email" >
+            <div class="error-message" *ngIf="registerForm.get('email').touched && registerForm?.get('email')?.errors?.required">
+                Email is required
+            </div>
+            <div class="error-message" *ngIf="registerForm.get('email').touched && registerForm?.get('email')?.errors?.invalidEmail">
+                Invalid email address
+            </div>
+        </div>
+        <div class="form-row">
+            <label for="name">Phone Number</label>
+            <input  class="form-control" [ngClass]="{'input-error': registerForm.get('phoneNumber').touched && (registerForm?.get('phoneNumber')?.errors?.required
+            || registerForm?.get('phoneNumber')?.errors?.minlength || registerForm?.get('phoneNumber')?.errors?.maxlength)}"
+            formControlName="phoneNumber" placeholder="Phone Number" >
+            <div class="error-message" *ngIf="registerForm.get('phoneNumber').touched && registerForm?.get('phoneNumber')?.errors?.required">
+                Phone Number is required
+            </div>
+            <div class="error-message" *ngIf="registerForm.get('phoneNumber').touched && registerForm?.get('phoneNumber')?.errors?.minlength">
+                Phone Number isn't long enough
+            </div>
+            <div class="error-message" *ngIf="registerForm.get('phoneNumber').touched && registerForm?.get('phoneNumber')?.errors?.maxlength">
+                Phone Number exceeded maximum length of 15 Numbers
+            </div>
+        </div>
+        <div class="form-row">
+            <label for="name">User Name</label>
+            <input  class="form-control" [ngClass]="{'input-error': registerForm.get('userName').touched && (registerForm?.get('userName')?.errors?.required
+            || registerForm?.get('userName')?.errors?.minlength || registerForm?.get('userName')?.errors?.maxlength)}"
+            formControlName="userName" placeholder="User Name" >
+            <div class="error-message" *ngIf="registerForm.get('userName').touched && registerForm?.get('userName')?.errors?.required">
+                User Name is required
+            </div>
+            <div class="error-message" *ngIf="registerForm.get('userName').touched && registerForm?.get('userName')?.errors?.minlength">
+                User Name isn't long enough, minimum of 6 characters
+            </div>
+            <div class="error-message" *ngIf="registerForm.get('userName').touched && registerForm?.get('userName')?.errors?.maxlength">
+                User Name exceeded maximum length of 15 characters
+            </div>
+        </div>
+        <div class="form-row">
+            <label for="name">Password</label>
+            <input  class="form-control" type="password" [ngClass]="{'input-error': registerForm.get('password').touched && (registerForm?.get('password')?.errors?.required
+            || registerForm?.get('password')?.errors?.minlength)}"
+            formControlName="password" placeholder="Password" >
+            <div class="error-message" *ngIf="registerForm.get('password').touched && registerForm?.get('password')?.errors?.required">
+                Password is required
+            </div>
+            <div class="error-message" *ngIf="registerForm.get('password').touched && registerForm?.get('password')?.errors?.minlength">
+                Password isn't long enough, minimum of 6 characters
+            </div>
+        </div>
+        <div class="form-row">
+            <label for="name">Confirm Password</label>
+            <input  class="form-control" type="password" [ngClass]="{'input-error': registerForm.get('confirmPassword').touched && (registerForm?.get('confirmPassword')?.errors?.required
+            || registerForm?.get('confirmPassword')?.errors?.mismatchedPasswords)}"
+            formControlName="confirmPassword" placeholder="Confirm Password" >
+            <div class="error-message" *ngIf="registerForm.get('confirmPassword').touched && registerForm?.get('confirmPassword')?.errors?.required">
+                Confirm Password is required
+            </div>
+            <div class="error-message" *ngIf="registerForm.get('confirmPassword').touched && registerForm?.get('confirmPassword')?.errors?.mismatchedPasswords">
+                Passwords do not match
+            </div>
+        </div>
+        <div style="text-align: right; margin: 15px 0 15px 0">
+            <button type="button" class="btn btn-primary " type="submit">Sign Up</button>              
+        </div>
+    </form>
+</div>
+</div>

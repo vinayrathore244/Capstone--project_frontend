@@ -1,0 +1,72 @@
+        <form [formGroup]="addressForm" (ngSubmit)="onAddressFormSubmit()">
+          <div>
+            <div class="form-row">
+                <label for="name">Name</label>
+                <input  class="form-control" [ngClass]="{'input-error': this.addressForm.get('name').touched && addressForm?.get('name')?.errors?.required}"
+                 formControlName="name" placeholder="Name" >
+                <div class="error-message" *ngIf="this.addressForm.get('name').touched && addressForm?.get('name')?.errors?.required">
+                  Name is required
+                </div>
+            </div>
+            <div class="form-row">
+                <label for="street">Address (street, apartment, suite, unit street etc.)</label>
+                <input  class="form-control"  [ngClass]="{'input-error': this.addressForm.get('street').touched && addressForm?.get('street')?.errors?.required}"
+                  placeholder="Address (street, apartment, suite, unit street etc.)" formControlName="street" >
+                <div class="error-message" *ngIf="this.addressForm.get('street').touched && addressForm?.get('street')?.errors?.required">
+                  Building Number & Street is required
+                </div>
+            </div>
+            <div class="form-row">
+                <label for="landmark">Landmark</label>
+                <input class="form-control" placeholder="Landmark" formControlName="landmark">
+            </div>
+      
+            <div class="form-row">
+                <label for="city">City</label>
+                <input class="form-control"  [ngClass]="{'input-error': this.addressForm.get('city').touched && addressForm?.get('city')?.errors?.required}"
+                  placeholder="City" formControlName="city" >
+                <div class="error-message" *ngIf="this.addressForm.get('city').touched && addressForm?.get('city')?.errors?.required">
+                  City is required
+                </div>
+            </div>
+            <div class="form-row">
+                <label for="state">State</label>
+                <input class="form-control"  [ngClass]="{'input-error': this.addressForm.get('state').touched && addressForm?.get('state')?.errors?.required}"
+                  placeholder="State" formControlName="state" >
+                <div class="error-message" *ngIf="this.addressForm.get('state').touched && addressForm?.get('state')?.errors?.required">
+                  State is required
+                </div>
+            </div>
+           <div class="form-row">
+                <label for="zipcode">Zip/Postal Code</label>
+                <input class="form-control"  [ngClass]="{'input-error': this.addressForm.get('zipcode').touched && addressForm?.get('zipcode')?.errors?.required}"
+                  placeholder="Zip/Postal Code" formControlName="zipcode" >
+                <div class="error-message" *ngIf="this.addressForm.get('zipcode').touched && addressForm?.get('zipcode')?.errors?.required">
+                  Zip/Postal Code is required
+                </div>                
+            </div>
+      
+            <div class="form-row">
+                <label for="phone">Phone Number</label>
+                <input class="form-control"  [ngClass]="{'input-error': this.addressForm.get('phone').touched && addressForm?.get('phone')?.errors?.required}"
+                  placeholder="Phone Number" formControlName="phone" >
+                <div class="error-message" *ngIf="this.addressForm.get('phone').touched && addressForm?.get('phone')?.errors?.required">
+                  Phone Number is required
+                </div>  
+                <div class="invalid-feedback" *ngIf="this.addressForm.get('phone').touched && addressForm?.get('phone')?.errors?.minLegth">
+                  Phone Number isn't long enough
+                </div>  
+                <div class="error-message" *ngIf="this.addressForm.get('phone').touched && addressForm?.get('phone')?.errors?.maxLength">
+                  Phone Number exceeded maximum length of 15 Numbers
+                </div>  
+            </div>
+      
+            <div style="text-align: right">
+                  <button type="button" class="btn btn-primary " type="submit">Continue</button>              
+            </div>
+          </div>
+        </form>        
+   
+
+
+

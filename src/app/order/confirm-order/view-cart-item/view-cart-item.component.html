@@ -1,0 +1,20 @@
+
+<div class="card" style="width: 100%;">
+  <div class="card-body">
+    <div class="container">
+      <div class="row justify-content-md-center align-items-center">
+        <div class="col-lg-3 col-md-3">
+          <img class="card-img-top" [src]="product.imageUrl" alt="Card image cap" class="cart-img" [routerLink]="['/products/detail', product.productId]">
+          <p class="new-price">{{product.price | currency:'INR'}}</p>
+        </div>
+        <div class="col-lg-6 col-md-6">
+          <a [routerLink]="['/products/detail', product.productId]"> <h3>{{product.name}}</h3></a>
+          <div class="text-muted">{{product.description | truncateText:100}}</div>
+        </div>
+        <div class="col-lg-3 col-md-3">
+          <span style="font-weight: bold">  {{product.calculatedPrice | currency:'INR'}} X {{cartItem.quantity}} = {{(product.calculatedPrice * cartItem.quantity) | currency:'INR'}}</span>
+        </div>   
+      </div>
+    </div>          
+  </div>
+</div>    

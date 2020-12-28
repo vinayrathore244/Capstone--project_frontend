@@ -1,0 +1,33 @@
+  <div class="card">
+    <div class="card-body">    
+         
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div>
+      <div class="form-row" style="margin-top: 15px">
+          <label for="name">Username</label>
+          <input  class="form-control" [ngClass]="{'input-error': loginForm.get('userName').touched && loginForm?.get('userName')?.errors?.required}"
+          formControlName="userName" placeholder="Username" >
+          <div class="error-message" *ngIf="loginForm.get('userName').touched && loginForm?.get('userName')?.errors?.required">
+            Username is required
+          </div>
+      </div>
+      <div class="form-row" style="margin-top: 15px">
+          <label for="street">Password</label>
+          <input  class="form-control"  type="password" [ngClass]="{'input-error': loginForm.get('password').touched && (loginForm?.get('password')?.errors?.required
+            || loginForm?.get('password')?.errors?.minLength)}"
+            placeholder="Password" formControlName="password"  >
+          <div class="error-message" *ngIf="loginForm.get('password').touched && loginForm?.get('password')?.errors?.required">
+            Password is required
+          </div>
+          <div class="error-message" *ngIf="loginForm.get('password').touched && loginForm?.get('password')?.errors?.minlength">
+            Password isn't long enough, minimum of 6 characters
+          </div>
+      </div>
+      <div style="text-align: right; margin-top: 15px">
+          <button type="button" class="btn btn-primary " type="submit">Sign In</button>              
+      </div>
+    </div>
+  </form>   
+  </div>
+  </div>
+

@@ -1,0 +1,14 @@
+.navbar-container{
+
+  .mat-icon-button{
+    width:100%;
+  }
+}
+
+.dropdown .nav-link {color:#fff; text-decoration: none;}
+.dropdown .dropdown-menu a{color: #000; text-decoration: none;}
+a.dropdown-item:focus,  a.dropdown-item:active{
+  background-color: white;
+  border: none
+}
+

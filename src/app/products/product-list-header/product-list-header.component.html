@@ -1,0 +1,13 @@
+
+<div class="container">
+  <div style="display: flex; flex-direction: row;
+  align-items: center; padding: 20px 0 20px 0">
+    <div style="   margin-right: 15px;">Sort By</div>
+    <div><select class="custom-select" [(ngModel)]="selectedSortLabel" (click)="selectEvent()">
+      <option *ngFor="let sort of sortTypes" [value]="sort.label" >{{sort.label}}</option>
+    </select></div>
+    
+  </div>
+</div>
+
+

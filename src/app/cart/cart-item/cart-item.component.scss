@@ -1,0 +1,37 @@
+.cart-card {
+
+    margin: 4px;
+    max-height: 150px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  }
+:host{
+  width: 100%;
+  a, a:active, a:link, a:visited {
+    text-decoration: none;
+    color: #0066c0;
+  }
+  a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #c45500;
+  }
+
+}
+
+.cart-img{
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.horizontal-card {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-column {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 0 10px 0 10px;
+}

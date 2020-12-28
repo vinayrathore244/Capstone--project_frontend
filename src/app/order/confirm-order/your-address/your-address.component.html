@@ -1,0 +1,11 @@
+<div class="card" style="width: 18rem;" *ngIf="address">
+  <div class="card-body">
+    <h3> {{address.name | titlecase }}</h3>
+      <p class="card-text"> {{address.street}}</p>
+      <p class="card-text"> {{address.landmark}}</p>
+      <p class="card-text"> {{address.city}}</p>
+      <p class="card-text"> {{address.state}}</p>
+      <p class="card-text"> {{address.zipcode}}</p>
+      <p class="card-text"> Phone: {{address.phone}}</p>
+  </div>
+</div>

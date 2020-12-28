@@ -1,0 +1,16 @@
+:host{
+  height: 100%;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .center-container{
+    width: 80%;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+}
+
+

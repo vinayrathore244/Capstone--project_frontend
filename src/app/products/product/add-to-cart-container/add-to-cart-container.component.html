@@ -1,0 +1,10 @@
+
+
+<div *ngIf="product?.availableItems > 0 ">
+  <app-choose-quantity [availableItems]="product.availableItems"  (onCountChange)="updateCount($event)"></app-choose-quantity>
+  <a  (click)="validateUserAndAddToCart(product)"
+   *ngIf="product?.availableItems > 0"><fa-icon [icon]="faShoppingCart"></fa-icon>Buy Now</a>
+</div>
+<div *ngIf="product?.availableItems == 0 " class="bg-warn p-1 mt-2">
+  Sorry, this item is unavailable. Please choose a different one.
+</div>

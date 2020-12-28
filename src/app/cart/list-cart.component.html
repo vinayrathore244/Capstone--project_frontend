@@ -1,0 +1,15 @@
+<ng-container>
+  <div>
+    <ng-container *ngFor="let cartItem of cartItems">
+      <app-cart-item [cartItem]="cartItem" (onRefreshCart)="reload()"></app-cart-item>
+    </ng-container>
+    <br>
+
+  </div>
+
+  <div class="w-100">
+    <button class="pull-right btn btn-primary" type="button"  (click)="onContinue()">Continue</button>
+  </div>
+
+
+</ng-container>

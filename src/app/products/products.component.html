@@ -1,0 +1,24 @@
+
+
+  <div class="container">
+    <div class="row">
+      <app-product-list-header (onSortChange)="reloadBasedOnSort($event)" (onRatingChange)="reloadBasedOnRating($event)"></app-product-list-header>
+    </div>
+    <div class="row">
+      <ng-container *ngFor="let product of products ">
+        <app-product-item-thumbnail [product]="product"></app-product-item-thumbnail>
+      </ng-container>
+    </div>
+    <div class="row justify-content-center"  >
+      <ngb-pagination 
+      [ellipses]="true"
+      [maxSize]="7"
+      [collectionSize]="pageable?.total" 
+      [page]="pageable?.pageNo + 1" 
+      [pageSize]="10"
+      (pageChange)="onPageChange($event)"
+      aria-label="Default pagination"></ngb-pagination>
+  
+    </div>
+  </div>
+

@@ -1,0 +1,12 @@
+<div class="container" *ngIf="order">
+  <div class="row">
+    <div class="col-lg-8 col-md-8">
+      <app-your-items [cartItems]="order.cart.cartItems" ></app-your-items>
+    </div>
+    <div class="col-lg-4 col-md-4">
+      <app-your-address [address]="order.shippingAddress"></app-your-address>
+      <app-order-amount [order]="order"></app-order-amount>
+    </div>
+  </div>
+</div>
+<button type="button" class="btn btn-primary pull-right" (click)="onComplete.emit($event)">Confirm Order</button>

@@ -1,0 +1,13 @@
+.menu-spacer {
+  flex: 1 1 auto;
+}
+
+button.navbar-toggler:focus {
+  border: 1px solid white;
+  box-shadow: none;
+  outline: none;
+}
+
+body{
+  overflow-y: scroll;
+}
